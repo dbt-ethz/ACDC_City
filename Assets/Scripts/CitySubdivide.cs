@@ -24,23 +24,10 @@ public class CitySubdivide : MolaMonoBehaviour
 
         MolaMesh city = MeshFactory.CreateQuad(cityDimX, cityDimY);
 
-        //city = MeshSubdivision.SubdivideMeshSplitRelative(city, 0, 0.3f, 0.3f, 0.7f, 0.7f);
-
-        //MolaMesh citySuburb = city.CopySubMesh(1);
-        //city = city.CopySubMesh(0);
-
         for (int i = 0; i < iteration; i++)
         {
             city = MeshSubdivision.SubdivideMeshSplitRelative(city, 0, 0.4f, 0.4f, 0.6f, 0.6f);
         }
-
-        //for (int i = 0; i < 2; i++)
-        //{
-        //    citySuburb = MeshSubdivision.SubdivideMeshSplitRelative(citySuburb, 0, 0.4f, 0.4f, 0.6f, 0.6f);
-        //}
-
-        //city.AddMesh(citySuburb);
-
 
         city = MeshSubdivision.SubdivideMeshOffset(city, -roadWidth * 0.5f);
         
